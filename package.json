@@ -1,0 +1,9 @@
+{
+  "name": "nlwvaloriza",
+  "version": "1.0.0",
+  "description": "Projeto NLW Valoriza com Node.Js da RocketSeat",
+  "main": "index.js",
+  "repository": "https://github.com/martex84/NLW_Valoriza_NodeJs---RocketSeat.git",
+  "author": "Martex84",
+  "license": "MIT"
+}
