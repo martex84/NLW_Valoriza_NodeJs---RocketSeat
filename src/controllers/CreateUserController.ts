@@ -6,6 +6,7 @@ export class CreateUserController {
         const {
             name,
             email,
+            password,
             admin
         } = request.body;
 
@@ -14,6 +15,7 @@ export class CreateUserController {
         const user = await createUserService.execute({
             name,
             email,
+            password,
             admin
         });
 
