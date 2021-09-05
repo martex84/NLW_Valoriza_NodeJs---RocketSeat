@@ -14,7 +14,7 @@ export class CreateUserServices {
         name,
         email,
         password,
-        admin
+        admin = false
     }: IUserRequest) {
         const userRepository = getCustomRepository(UserRepositories);
 
