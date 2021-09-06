@@ -10,8 +10,6 @@ export class CreateComplimentsController {
         } = request.body;
         const { user_id } = request;
 
-        console.log(user_id);
-
         const createTagsService = new CreateComplimentsServices();
 
         const tags = await createTagsService.execute({
