@@ -16,7 +16,7 @@ const autenticateUserController = new AutenticateUserController();
 
 router.post("/users", createUserController.handle);
 router.post("/tags", ensureAuthenticated, ensureAdmin, createTagController.handle);
-router.post("/compliments", createComplimentsController.handle);
+router.post("/compliments", ensureAuthenticated, createComplimentsController.handle);
 router.post("/autenticate", autenticateUserController.handle);
 
 export { router };
