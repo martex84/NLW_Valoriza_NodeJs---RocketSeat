@@ -1,18 +1,25 @@
 import { Request, Response, NextFunction } from "express";
+import { getCustomRepository } from "typeorm";
 
-export function ensureAdmin(
+import { UserRepositories } from "../repositories/UserRepositories";
+
+export async function ensureAdmin(
     request: Request,
     response: Response,
     next: NextFunction
 ) {
+    const { user_id } = request;
 
-    const admin = true;
+    const userRepositories = getCustomRepository(UserRepositories);
 
-    if (admin) {
-        return next();
+    const { admin } = await userRepositories.findOne(user_id);
+
+    if (!admin) {
+        return response.status(401).json({
+            error: "Unauthorized"
+        })
     }
 
-    return response.status(401).json({
-        error: "Unauthorized"
-    })
+    return next();
+
 }
